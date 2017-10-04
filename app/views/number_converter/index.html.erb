@@ -1,2 +1,22 @@
-<h1>NumberConverter#index</h1>
-<p>Find me in app/views/number_converter/index.html.erb</p>
+<h1>Number Converter 9000</h1>
+
+<% if number_to_base(@number, @base).present? %>
+<p>In base <%= @base %>:
+<%= number_to_base(@number, @base) %></p>
+<% end %>
+
+<%= form_with(local:true) do |f| %>
+
+    <div>
+        <%= f.label :number, 'Enter your number' %>
+        <%= f.text_field :number, value: @number %>
+    </div>
+
+    <div>
+        <%= f.label :base, 'Base' %>
+        <%= f.text_field :base, value: @base %>
+    </div>
+
+    <%= f.submit 'Convert' %>
+
+<% end %>

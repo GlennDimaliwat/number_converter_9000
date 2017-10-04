@@ -19,7 +19,18 @@ Convert to base:
 - `rails g controller NumberConverter index`
 
 
+## Challenge
 
-- NumberConversion
+### Create a model NumberConversion and save in database for each conversion
 - input_number
 - base
+
+### Add a history list to NumberConverter#index
+
+### Add Bootstrap 4
+
+### Add /base/5
+### Add /base/9
+### Add /base/16
+### Add /base/:base
+- Will display number 0-200 converted to that base
