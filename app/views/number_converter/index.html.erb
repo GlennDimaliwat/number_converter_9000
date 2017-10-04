@@ -19,12 +19,14 @@
         <%= f.text_field :base, value: @base %>
     </div>
 
-    <%= f.submit 'Convert' %>
+    <%= f.submit 'Convert', class: 'btn-primary' %>
 
 <% end %>
 
-<h2>History:</h2>
+
 <div>
+    <br><br><br>
+    <h2>History:</h2>
     <% @history.each do |h| %>
         Input: <%= h.input_number %><br>
         Base: <%= h.base %><br>
