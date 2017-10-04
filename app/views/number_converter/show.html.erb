@@ -1,9 +1,20 @@
 <h1>Base <%= @base %></h1>
 
 <div>
-    <% (0..200).each do |n| %>
-        Input: <%= n %><br>
-        Base: <%= @base %><br>
-        Result: <%= number_to_base(n, @base) %><br><br>
-    <% end %>    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Input Number</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% (0..200).each do |n| %>
+            <tr>
+                <td><%= n %></td>
+                <td><%= number_to_base(n, @base) %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
 </div>
