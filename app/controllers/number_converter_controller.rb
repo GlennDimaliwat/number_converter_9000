@@ -8,7 +8,7 @@ class NumberConverterController < ApplicationController
       @base = safe_params[:base].to_i
 
       # Initialise result object
-      @result = NumberConversion.new
+      @result = NumberConversion.new(input_number: @number, base: @base )
 
       # Store conversion if user inputted something
       if @number > 0 || @base > 0

@@ -23,10 +23,10 @@
         <%= f.text_field :base, value: @base %>
     </div>
 
-    <% if number_to_base(@number, @base).present? and @base>1 %>
+    <% if @result.number_to_base.present? and @base>1 %>
     <div class="field">
         <%= f.label :result, "Result in Base #{@base}" %>
-        <%= f.text_field :result, value: number_to_base(@number, @base), :readonly => true %>
+        <%= f.text_field :result, value: @result.number_to_base, :readonly => true %>
     </div>
     <% end %>
 
