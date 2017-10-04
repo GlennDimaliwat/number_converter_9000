@@ -1,0 +1,9 @@
+<h1>Base <%= @base %></h1>
+
+<div>
+    <% (0..200).each do |n| %>
+        Input: <%= n %><br>
+        Base: <%= @base %><br>
+        Result: <%= number_to_base(n, @base) %><br><br>
+    <% end %>    
+</div>

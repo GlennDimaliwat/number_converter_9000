@@ -1,8 +1,10 @@
 <h1>Number Converter 9000</h1>
 
 <% if number_to_base(@number, @base).present? %>
-<p>In base <%= @base %>:
-<%= number_to_base(@number, @base) %></p>
+<p>
+    In base <%= @base %>:
+    <%= number_to_base(@number, @base) %>
+</p>
 <% end %>
 
 <%= form_with(local:true) do |f| %>
@@ -20,3 +22,12 @@
     <%= f.submit 'Convert' %>
 
 <% end %>
+
+<h2>History:</h2>
+<div>
+    <% @history.each do |h| %>
+        Input: <%= h.input_number %><br>
+        Base: <%= h.base %><br>
+        Result: <%= number_to_base(h.input_number, h.base) %><br><br>
+    <% end %>    
+</div>

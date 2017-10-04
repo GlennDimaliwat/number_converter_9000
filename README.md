@@ -24,6 +24,7 @@ Convert to base:
 ### Create a model NumberConversion and save in database for each conversion
 - input_number
 - base
+- result
 
 ### Add a history list to NumberConverter#index
 
