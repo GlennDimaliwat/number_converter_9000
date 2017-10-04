@@ -45,6 +45,7 @@
                 <th>Input Number</th>
                 <th>To Base</th>
                 <th>Result</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -53,6 +54,7 @@
                 <td><%= h.input_number %></td>
                 <td><%= h.base %></td>
                 <td><%= number_to_base(h.input_number, h.base) %></td>
+                <td><%= link_to "Delete", h, method: :delete %></td>
             </tr>
             <% end %>
         </tbody>

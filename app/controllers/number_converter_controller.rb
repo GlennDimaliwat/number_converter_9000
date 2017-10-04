@@ -24,5 +24,15 @@ class NumberConverterController < ApplicationController
     # Get the base
     @base = params[:base].to_i
   end
+
+  def destroy
+    # Get the ID
+    history = NumberConversion.find(params[:id])
+
+    # Delete the record
+    history.destroy
+
+    redirect_to root_url
+  end
   
 end
