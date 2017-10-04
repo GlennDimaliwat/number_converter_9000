@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+    background-color: dodgerblue;
+}
+
+div.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: white;
+}
+
+table.table {
+    max-width: 600px;
+}
+
 form {
     position: relative;
     width: 100%;
@@ -26,6 +40,9 @@ form {
             font-size: 16px;
             // color: black;
         }
-
     }
+}
+
+div.history {
+    margin-top: 30px;
 }

@@ -1,6 +1,5 @@
 <h1>Number Converter 9000</h1>
 
-
 <%= form_with(local:true) do |f| %>
 
     <% if @result.errors.any? %>
@@ -39,10 +38,9 @@
 <% end %>
 
 
-<div>
-    <br><br><br>
+<div class="history">
     <h2>History</h2>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-condensed">
         <thead>
             <tr>
                 <th>Input Number</th>
