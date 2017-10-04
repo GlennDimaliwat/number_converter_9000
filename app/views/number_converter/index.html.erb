@@ -4,13 +4,12 @@
 
     <% if @result.errors.any? %>
     <div id="error_explanation">
-    <p><%= pluralize(@result.errors.count, "error") %> prohibited this conversion from being saved:</p>
-
-    <ul>
-    <% @result.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-    <% end %>
-    </ul>
+        <p><%= pluralize(@result.errors.count, "error") %> prohibited this conversion from being saved:</p>
+        <ul>
+        <% @result.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+        </ul>
     </div>
     <% end %>
 
