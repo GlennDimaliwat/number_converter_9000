@@ -1,24 +1,25 @@
-# README
+# Number Converter 9000
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Enter your number:
+[                ]
 
-Things you may want to cover:
+Convert to base:
+[                ]
 
-* Ruby version
+[ Convert ]
 
-* System dependencies
 
-* Configuration
+5609 in base 16 is 15E9
 
-* Database creation
 
-* Database initialization
+## Controllers
 
-* How to run the test suite
+- NumberConverterController
+- index
+- `rails g controller NumberConverter index`
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+- NumberConversion
+- input_number
+- base
