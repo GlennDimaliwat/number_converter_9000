@@ -3,6 +3,18 @@
 
 <%= form_with(local:true) do |f| %>
 
+    <% if @result.errors.any? %>
+    <div id="error_explanation">
+    <p><%= pluralize(@result.errors.count, "error") %> prohibited this conversion from being saved:</p>
+
+    <ul>
+    <% @result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+    </ul>
+    </div>
+    <% end %>
+
     <div class="field">
         <%= f.label :number, 'Enter your number' %>
         <%= f.text_field :number, value: @number %>
@@ -13,15 +25,15 @@
         <%= f.text_field :base, value: @base %>
     </div>
 
-    <% if number_to_base(@number, @base).present? and @base>=2 %>
+    <% if number_to_base(@number, @base).present? and @base>1 %>
     <div class="field">
         <%= f.label :result, "Result in Base #{@base}" %>
         <%= f.text_field :result, value: number_to_base(@number, @base), :readonly => true %>
     </div>
     <% end %>
 
-    <%= f.submit 'Convert', class: 'btn-primary' %>
-    <%= link_to (f.button 'Reset', class: 'btn-primary'), root_path %>
+    <%= f.submit 'Convert', class: 'btn-lg btn-primary' %>
+    <%= link_to (f.button 'Reset', class: 'btn-lg btn-primary'), root_path %>
 
     
 <% end %>
@@ -34,7 +46,7 @@
         <thead>
             <tr>
                 <th>Input Number</th>
-                <th>Base</th>
+                <th>To Base</th>
                 <th>Result</th>
             </tr>
         </thead>

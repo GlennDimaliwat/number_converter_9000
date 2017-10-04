@@ -22,38 +22,10 @@ form {
             border-radius: 4px;
             box-sizing: border-box;
             margin-bottom: 15px;
-            resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+            // resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
             font-size: 16px;
             // color: black;
         }
 
-        // input[type=text]:focus, textarea:focus {
-        //     box-shadow: 0 0 5px black;
-        //     border: 1px solid black;
-        // }
     }
-
-    // div.actions {
-    //     text-align: center;
-
-    //     input:focus {
-    //         outline:0;
-    //     }
-    //     input[type=submit] {
-    //         position: relative;
-    //         height: 30px;
-    //         margin-top: 5px;
-    //         border: 1px solid black;
-    //         font-weight: normal;
-    //         font-size: 16px;
-    //         background-color: white;
-    //         cursor: pointer;
-    //         transition: .5s all;
-
-    //         &:hover {
-    //             background-color: black;
-    //             color: white;
-    //         }
-    //     }
-    // }
 }

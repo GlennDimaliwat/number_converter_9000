@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Get '/' => 'number_converter#index'
 
   # Add route for when the form is submitted
-  post '/' => 'number_converter#index'
+  post '/' => 'number_converter#index', as: 'number_conversions'
 
   get '/base/:base' => 'number_converter#show'
 

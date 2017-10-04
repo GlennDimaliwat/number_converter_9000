@@ -1,14 +1,18 @@
 class NumberConverterController < ApplicationController
   def index
     # if we are submitted the form
-    if !params.empty? and @base!=1
+    if !params.empty?
+      # Get parameters and convert to integer
       safe_params = params.permit(:number, :base)
       @number = safe_params[:number].to_i
       @base = safe_params[:base].to_i
 
-      # Store conversion
-      if @number > 0 and @base >= 2
-        NumberConversion.create(input_number: @number, base: @base)
+      # Initialise result object
+      @result = NumberConversion.new
+
+      # Store conversion if user inputted something
+      if @number > 0 || @base > 0
+        @result = NumberConversion.create(input_number: @number, base: @base )
       end
 
       # Get conversion history
@@ -20,4 +24,5 @@ class NumberConverterController < ApplicationController
     # Get the base
     @base = params[:base].to_i
   end
+  
 end
