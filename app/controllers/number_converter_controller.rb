@@ -13,6 +13,7 @@ class NumberConverterController < ApplicationController
       # Store conversion if user inputted something
       if @number > 0 || @base > 0
         @result = NumberConversion.create(input_number: @number, base: @base )
+        @answer = NumberConversion.result
       end
 
       # Get conversion history

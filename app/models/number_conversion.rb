@@ -8,11 +8,8 @@ class NumberConversion < ApplicationRecord
     validates :base, numericality: { only_integer: true, greater_than_or_equal_to: 2, message: 'Base must be greater than or equal to 2'}
 
     # Number to Base X
-    DIGITS = ('0'..'9').to_a + ('A'..'Z').to_a
-    def number_to_base
-        number = self.input_number
-        base = self.base
-
+    DIGITS = ('0'..'9').to_a + ('a'..'z').to_a
+    def number_to_base(number, base)
         return '0' if number == 0
         return 'indeterminate' if base < 2
 
@@ -26,4 +23,8 @@ class NumberConversion < ApplicationRecord
         output
     end
     
+    # Result method
+    def result
+        number_to_base(self.input_number, self.base)
+    end
 end
