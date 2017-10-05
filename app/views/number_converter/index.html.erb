@@ -14,19 +14,19 @@
     <% end %>
 
     <div class="field">
-        <%= f.label :number, 'Enter your number' %>
-        <%= f.text_field :number, value: @number %>
+        <%= f.label :input_number, 'Enter your number' %>
+        <%= f.text_field :input_number, value: @number_conversion.input_number %>
     </div>
 
     <div class="field">
         <%= f.label :base, 'Base' %>
-        <%= f.text_field :base, value: @base %>
+        <%= f.text_field :base, value: @number_conversion.base %>
     </div>
 
     <% if @answer.present? and @base>1 %>
     <div class="field">
-        <%= f.label :result, "Result in Base #{@base}" %>
-        <%= f.text_field :result, value: @result, :readonly => true %>
+        <%= f.label :result, "Result in Base #{@number_conversion.base}" %>
+        <%= f.text_field :result, value: @number_conversion.result, :readonly => true %>
     </div>
     <% end %>
 
