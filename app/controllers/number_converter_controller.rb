@@ -8,7 +8,7 @@ class NumberConverterController < ApplicationController
     @number_conversion.save unless safe_params[:input_number].nil? or safe_params[:base].nil?
 
     # Get conversion history in descending order
-    @history = NumberConversion.all.order(updated_at: :desc)
+    @history = NumberConversion.all.order(created_at: :desc)
   end
 
   def show
@@ -23,6 +23,7 @@ class NumberConverterController < ApplicationController
     # Delete the record
     history.destroy
 
+    # Redirect to home page
     redirect_to root_url
   end
   

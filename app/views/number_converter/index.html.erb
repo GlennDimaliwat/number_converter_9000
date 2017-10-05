@@ -44,7 +44,6 @@
         <thead>
             <tr>
                 <th>Input Number</th>
-                <th>To Base</th>
                 <th>Result</th>
                 <th>Conversion Date</th>
                 <th></th>
@@ -53,9 +52,8 @@
         <tbody>
             <% @history.each do |h| %>
             <tr>
-                <td><%= h.input_number %></td>
-                <td><%= h.base %></td>
-                <td><%= h.result %></td>
+                <td><%= h.input_number %><sub>10</sub></td>
+                <td><%= h.result %><sub><%= h.base %></sub></td>
                 <td><%= h.updated_at.to_formatted_s(:short) %></td>
                 <td><%= link_to "Delete", h, method: :delete %></td>
             </tr>
