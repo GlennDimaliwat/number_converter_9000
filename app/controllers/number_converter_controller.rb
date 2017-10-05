@@ -5,7 +5,7 @@ class NumberConverterController < ApplicationController
 
     # Initialise result object
     @number_conversion = NumberConversion.new(safe_params)
-    @number_conversion.save unless safe_params[:input_number].nil? or safe_params[:base].nil?
+    @number_conversion.save if request.post? # Save only if we called a POST request
 
     # Get conversion history in descending order
     @history = NumberConversion.all.order(created_at: :desc)
