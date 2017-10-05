@@ -3,7 +3,7 @@
 <%= form_with(local:true) do |f| %>
 
     <% if @number_conversion.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
         <p><%= pluralize(@number_conversion.errors.count, "error") %> prohibited this conversion from being saved:</p>
         <ul>
         <% @number_conversion.errors.full_messages.each do |message| %>
@@ -23,7 +23,7 @@
         <%= f.text_field :base, value: @number_conversion.base %>
     </div>
 
-    <% if @answer.present? and @base>1 %>
+    <% if @number_conversion.valid? %>
     <div class="field">
         <%= f.label :result, "Result in Base #{@number_conversion.base}" %>
         <%= f.text_field :result, value: @number_conversion.result, :readonly => true %>
