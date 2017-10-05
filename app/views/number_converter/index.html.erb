@@ -2,11 +2,11 @@
 
 <%= form_with(local:true) do |f| %>
 
-    <% if @result.errors.any? %>
+    <% if @number_conversion.errors.any? %>
     <div id="error_explanation">
-        <p><%= pluralize(@result.errors.count, "error") %> prohibited this conversion from being saved:</p>
+        <p><%= pluralize(@number_conversion.errors.count, "error") %> prohibited this conversion from being saved:</p>
         <ul>
-        <% @result.errors.full_messages.each do |message| %>
+        <% @number_conversion.errors.full_messages.each do |message| %>
             <li><%= message %></li>
         <% end %>
         </ul>
@@ -26,7 +26,7 @@
     <% if @answer.present? and @base>1 %>
     <div class="field">
         <%= f.label :result, "Result in Base #{@base}" %>
-        <%= f.text_field :result, value: @answer, :readonly => true %>
+        <%= f.text_field :result, value: @result, :readonly => true %>
     </div>
     <% end %>
 
@@ -38,13 +38,15 @@
 
 
 <div class="history">
-    <h2>History</h2>
+    <h2>Conversion History</h2>
+    <p><%= pluralize(@history.count, "past conversion") %></p>
     <table class="table table-bordered table-condensed table-striped">
         <thead>
             <tr>
                 <th>Input Number</th>
                 <th>To Base</th>
                 <th>Result</th>
+                <th>Conversion Date</th>
                 <th></th>
             </tr>
         </thead>
@@ -54,6 +56,7 @@
                 <td><%= h.input_number %></td>
                 <td><%= h.base %></td>
                 <td><%= h.result %></td>
+                <td><%= h.updated_at.to_formatted_s(:short) %></td>
                 <td><%= link_to "Delete", h, method: :delete %></td>
             </tr>
             <% end %>
