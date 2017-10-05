@@ -16,8 +16,8 @@ class NumberConverterController < ApplicationController
         @result = @number_conversion.result
       end
 
-      # Get conversion history
-      @history = NumberConversion.all
+      # Get conversion history in descending order
+      @history = NumberConversion.all.order(updated_at: :desc)
     end
   end
 
